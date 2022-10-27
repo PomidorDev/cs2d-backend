@@ -11,7 +11,6 @@ require('application/Application.php');
         switch ($method) {
             case 'login' :  return $app->login($params);
             case 'getUserByLogin' :  return $app->getUserByLogin($params);
-            case 'convert' : return $app->convert($params);
             case 'sendMessage' : return $app->sendMessage($params);
             case 'getMessages' : return $app->getMessages($params);
         }
