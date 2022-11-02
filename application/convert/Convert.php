@@ -1,6 +1,14 @@
 <?php
+
+include ('Number.php');
+
+
+
 class Convert {
-    function convertTo($value, $systemFrom, $systemTo) {
-        return 'Молодец';
+    function ConvertTo($value, $systemFrom, $systemTo) {
+
+        $conv = new Number($value, $systemFrom, $systemTo);
+        return  $conv->convert();
     }
 }
+
