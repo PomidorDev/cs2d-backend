@@ -19,15 +19,10 @@ function login($params) {
     };
 }
 
-function registration($params){
-    return $this->user->registration($params['userName'], $params['password'], $params['login']);
-}
-
-
-function getUserByToken($params) {
+function getUserByLogin($params) {
     
-    if ($params['token']) {
-        return $this->user->getUserByToken($params['token']);
+    if ($params['login']) {
+        return $this->user->getUserByLogin($params['login']);
     };
 }
 
