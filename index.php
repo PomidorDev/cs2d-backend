@@ -1,5 +1,5 @@
 <?php
-header("Access-Control-Allow-Origin: *");
+//header("Access-Control-Allow-Origin: *");
 error_reporting(-1);
 
 require('application/Application.php');
@@ -10,11 +10,9 @@ require('application/Application.php');
         $app = new Application();
         switch ($method) {
             case 'login' :  return $app->login($params);
-            case 'getUserByToken' :  return $app->getUserByToken($params);
-            case 'convert' : return $app->convert($params);
+            case 'getUserByLogin' :  return $app->getUserByLogin($params);
             case 'sendMessage' : return $app->sendMessage($params);
             case 'getMessages' : return $app->getMessages($params);
-            case 'registration' : return $app->registration($params);
         }
     }
 }
@@ -31,4 +29,3 @@ require('application/Application.php');
 }
 
 echo json_encode(answer(router($_GET)));
-
