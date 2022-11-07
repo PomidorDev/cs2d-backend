@@ -12,7 +12,8 @@ class DB {
                 $user,
                 $pass
             );
-        } catch(Exception $e) { 
+        } catch(Exception $e) {
+            print_r($e->getMessage());
             die();
         }
     }
@@ -26,7 +27,10 @@ class DB {
         $stmt = $this->db->query($query);
         $result = array();
          while($row = $stmt->fetchObject()) {
-            $result[] = $row;
+            $result[] = array(
+                "name" => $row->userName,
+                "message" => $row->message
+            );
             $count++;
         }
         /*if($count >= 5)
@@ -56,26 +60,11 @@ class DB {
         return true;
     }
 
-    public function sendMessage($userId, $name, $message){
-        $query = "INSERT INTO `message`(`id`, `message`, `userName`) VALUES(" ."null".  ",'" .  $message .  "','" . $name."')";
+    public function sendMessage($name, $message){
+        $query = "INSERT INTO `message`(`id`, `message`, `userName`) VALUES(" . "null" . ",'" .  $message .  "','" . $name."')";
         $this->db->query($query);
         return true;
-    }
-
-    public function getMessages() {
-        $query = 'SELECT * FROM `message` ';
-        return $this->getArray($query);
-    }
-
-    public function getChatHash() {
-        $query = 'SELECT chat_hash FROM statuses';
-        return $this->db->query($query)->fetchObject();
-    }
-
-    public function setChatHash($hash) {
-        $query = 'UPDATE statuses SET chat_hash="' . $hash . '"';
-        $this->db->query($query);
-        return true;
+        //INSERT INTO `message`(`id`, `message`, `userName`) VALUES (null,'[value-2]','[value-3]')
     }
 
     public function getUsers() {
@@ -83,9 +72,9 @@ class DB {
         return $this->getArray($query);
     }
 
-    public function registration($userName, $password, $login){
-        $query = "INSERT INTO `users`(`id`, `login`, `password`, `token`, `name`) VALUES(" . "null" . ",'" . $login . "','" . $password . "'," . "null" . ",'" . $userName ."')";
-        $this->db->query($query);
-        return true;
-        }
+    public function showChat() {
+        $query = 'SELECT * FROM `message` ';
+        return $this->getArray($query);
+    }
+
 }
