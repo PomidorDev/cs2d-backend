@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <script src = 'public/main.js'></script>
+        <script src = 'public/Server.js'></script>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+        <p id = "avtor">Авторизация</p>
+        <input id = 'login' placeholder="логин"> 
+        <input id = 'password' placeholder="пароль"> 
+        <button id="enter">Войти</button>
+        <button id="exit">Выйти</button>
+         <p>===============</p> 
+       
+       <!-- <p id = 'num'>Число</p>
+        <input id = 'number'> <br>
+        <p id = 'o'>Из какой системы переводить</p>
+        <input id = 'out'> <br>
+        <p id = 'i'>В какую систему переводить</p>
+        <input id = 'inn'> <br><br>
+         <button id="sendConvert">Перевести</button>
+         <button id="exit">Выйти</button>
+         <p id="res"></p> -->
+         
+        <p id="ch">Чат</p>
+        <input id = 'mesagge' placeholder="введите сообщение"> 
+        <button id="sendmesagge">Отправить</button> <br><br>
+        <p id="chat"></p>
+        <p>===============</p> 
+
+
+        <p>Регистрация</p>
+        <input id = 'regName' placeholder="имя">
+        <input id = 'regLogin' placeholder="логин"> <br> <br>
+        <input id = 'regPassword' placeholder="пароль"><br> <br>
+        <input id = 'regPassword2' placeholder="повторите пароль"> <br> <br>
+        <button id="reg">Зарагестрироваться</button>
+        <p>===============</p>  
+
+        <p>Меню</p>
+        <button id="newGame">Новая игра</button>
+        
+        <p>===============</p>
+        <p>Присоедениться к лобби</p>
+        <p>Список лобби:</p>
+        <p> HOST &nbsp  Участ  </p>
+        <p> alex123   &nbsp &nbsp  3  &nbsp &nbsp <button id="10"> присоедениться</button> </p>
+        <p> sergay69  &nbsp &nbsp  5  &nbsp &nbsp <button id="11"> присоедениться</button> </p>
+        <button id="createLobby">Создать лобби</button> <button id="exitToMenu">Выйти</button>
+
+        <p>===============</p>
+        <p>HOST: alex123</p>
+        <p>Присоеденившиеся игроки:</p>
+        <p>alex123</p>
+        <p>sergay69</p>
+        <button id="leaveLobby">Покинуть</button> <button id="startMatch">Начать матч(только для хоста)</button>
+         <p>===============</p>
+         
+        
+        <p>Создать Лобби</p>
+        <p>Выбор режима <select id="regime" style="font-size: 15px"> <option id="time" value="time"> по времени </option> <option id="kills" value="kills"> по счёту </option></select> </p>
+        <p>Выбор карты <select id="map" style="font-size: 15px"> <option id="city"> город </option> <option id="other"> другое </option></select> </p>
+        <p>Количество игроков  <input id="maxAmountPlayers" placeholder="от 1 до 8" >    </p>    
+        <button id="createMatch">Создать</button> <button id="leaveCreateLobby">выйти</button>
+
+        
+
+        <p>===============</p> 
+         
+        <p id="In">Инвентарь</p>
+        <button id="getInventory">Получить инвентарь</button> <br><br>
+        <p id="Invent"></p>
+ 
+        <p>===============</p>
+        <p id="arm">Руки</p>
+        <input id = 'armListener' placeholder="введите руку"> 
+       <button id="sendArm">Установить руку</button> <br><br>
+       <p id="arms"></p>
+
+       <p>===============</p>
+       <p id="del">Удаление</p>
+        
+      <button id="deleteLobby">Удалить лобби</button> <br><br>
+      <p id="dels"></p>
+
+    </body>
+
+    </html>
+
+    
